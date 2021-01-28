@@ -1,4 +1,4 @@
-name: scoped_model
+name: make_login
 description: A new Flutter application.
 
 # The following line prevents the package from being accidentally published to
@@ -23,18 +23,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
-  shared_preferences: ^0.5.10
-
 
 dev_dependencies:
-
   flutter_test:
     sdk: flutter
-
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -51,17 +48,6 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
-  assets:
-   - assets/img/airpods.png
-   - assets/img/applewatch.jpg
-   - assets/img/imac.jpeg
-   - assets/img/ipad.jpg
-   - assets/img/iphone12.jpg
-   - assets/img/macbookpro.jpg
-   - assets/img/macmini.jpg
-   - assets/img/avartar-icon.png
-
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

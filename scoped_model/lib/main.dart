@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:scoped_model/login.dart';
+import 'package:scoped_model/menuRight.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -7,8 +8,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "My Flutter App",
-      home: Home(),
+      // title: "My Flutter App",
+      home: login1(),
     );
   }
 }
@@ -44,6 +45,7 @@ class _HomeState extends State<Home> {
       ),
       //body: _children[_currentIndex],
 
+      endDrawer: MenuRight(),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped, // new
         currentIndex: _currentIndex, // this will be set when a new tab is tapped
@@ -62,6 +64,7 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
+      // endDrawer: MenuRight(),
     );
   }
 }
