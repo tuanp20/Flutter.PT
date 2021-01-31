@@ -10,39 +10,39 @@ class login1 extends StatefulWidget {
 
 class _myLogin extends State<login1> {
   /// sử dụng để lưu thông tin đăng nhập
-  SharedPreferences sharedStorage;
-
-  /// kiểm soát giá trị của TextInput
+  // SharedPreferences sharedStorage;
+  //
+  // /// kiểm soát giá trị của TextInput
   TextEditingController userController = TextEditingController();
   TextEditingController passController = TextEditingController();
-
-  /// trạng thái lưu thôgn tin đăng nhập
-  bool rememberMe = false;
-
+  //
+  // /// trạng thái lưu thôgn tin đăng nhập
+  // bool rememberMe = false;
+  //
   /// trạng thái tải dữ liệu
   bool isLoading = false;
   final GlobalKey<State> _keyLoader = new GlobalKey<State>();
-
-  @override
-  void initState() {
-    super.initState();
-    checkLogin();
-  }
-
-  checkLogin() async {
-    sharedStorage = await SharedPreferences.getInstance();
-    if (sharedStorage.containsKey("username") &&
-        sharedStorage.containsKey("password")) {
-      String username = sharedStorage.getString("username");
-      String password = sharedStorage.getString("password");
-      bool rememberAccount = sharedStorage.getBool("rememberme");
-      userController.text = username;
-      passController.text = password;
-      setState(() {
-        rememberMe = rememberAccount;
-      });
-    }
-  }
+  //
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   checkLogin();
+  // }
+  //
+  // checkLogin() async {
+  //   sharedStorage = await SharedPreferences.getInstance();
+  //   if (sharedStorage.containsKey("username") &&
+  //       sharedStorage.containsKey("password")) {
+  //     String username = sharedStorage.getString("username");
+  //     String password = sharedStorage.getString("password");
+  //     bool rememberAccount = sharedStorage.getBool("rememberme");
+  //     userController.text = username;
+  //     passController.text = password;
+  //     setState(() {
+  //       rememberMe = rememberAccount;
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -252,56 +252,6 @@ class _myLogin extends State<login1> {
   }
 
 }
-//   Future<void> login(String username, String password,BuildContext context) async {
-//     // setState(() {
-//     //   isLoading = true;
-//     // });
-//     //Dialogs.showLoadingDialog(context, _keyLoader);
-//     /// kiểm tra các input tài khoản mật khẩu có hợp lệ không
-//     if (userController.text.isNotEmpty &&
-//         passController.text.isNotEmpty) {
-//       if (username == "admin" && password == "admin") {
-//         ///lưu token đăng nhập
-//         sharedStorage.setString("token", "token");
-//         sharedStorage.setBool("rememberme", rememberMe);
-//         sharedStorage.setString("loginwith", "account");
-//
-//         ///lưu tài khoản + mật khẩu nếu có đăng ký ghi nhớ tên tài khoản
-//         if (rememberMe) {
-//           sharedStorage.setString("username", username);
-//           sharedStorage.setString("password", password);
-//         }
-//         // print(sharedStorage.getString("username"));
-//         // setState(() {
-//         //   isLoading = false;
-//         // });
-//         await Future.delayed(Duration(seconds: 5));
-//         Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
-//         ///hiển thị trang chủ nếu đăng nhập thành công
-//         Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
-//             builder: (BuildContext context) => Home()), (
-//             Route<dynamic> route) => false);
-//       }
-//       else{
-//         // setState(() {
-//         //   isLoading = false;
-//         // });
-//         await Future.delayed(Duration(seconds: 3));
-//         Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
-//         //showAlertDialog(context, "Tài khoản hoặc mật khẩu khống đúng");
-//       }
-//     }
-//     else{
-//       // setState(() {
-//       //   isLoading = false;
-//       // });
-//       await Future.delayed(Duration(seconds: 3));
-//       Navigator.of(_keyLoader.currentContext,rootNavigator: true).pop();
-//       //showAlertDialog(context, "Tài khoản và mật khẩu không được trống");
-//     }
-//   }
-// }
-
 
 
 class User{

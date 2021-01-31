@@ -71,29 +71,6 @@ class MenuRight extends StatelessWidget {
   }
 }
 
-// void logOut(BuildContext context) async{
-//   ///sử dụng sharedperferences để lấy trạng thái đăng nhập
-//   sharedStorage = await SharedPreferences.getInstance();
-//   String login = sharedStorage.getString("loginwith");
-//   switch (login) {
-//
-//   ///đăng xuất với tài khoản đăng ký trên ứng dụng
-//     case "account":
-//
-//     ///bỏ qua xoá tài khoản nếu có trạng thái ghi nhớ tài khoản còn không thì xoá hết các thông tin tài khoản
-//       if (!sharedStorage.getBool("rememberme")) {
-//         sharedStorage.clear();
-//       } else {
-//         sharedStorage.remove("token");
-//       }
-//
-//       ///quay trở lại màn hình đăng nhập
-//       Navigator.of(context).pushAndRemoveUntil(
-//           MaterialPageRoute(builder: (BuildContext context) => login()),
-//               (Route<dynamic> route) => false);
-//       break;
-//   }
-// }
 
 void logOut(BuildContext context) async{
   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (BuildContext context) => login1()), (Route<dynamic> route) => false);
