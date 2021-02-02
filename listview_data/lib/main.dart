@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:listview_data/network.dart';
 import 'package:listview_data/table.dart';
 
+import 'index.dart';
+import 'login.dart';
+//
+// import 'login.dart';
+//
 void main() {
   runApp(MyApp());
 }
@@ -15,8 +20,17 @@ class HomePage extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "List Data",
-      home: LadiPage(),
+    title: "List Data",
+      //Cấu hình cho toàn bộ app
+      theme: new ThemeData(
+          primarySwatch: Colors.blue,
+          primaryColor: Colors.black,
+          buttonColor: Colors.black,
+          primaryIconTheme: IconThemeData(color: Colors.black),
+          primaryTextTheme: TextTheme(
+              bodyText1: TextStyle(color: Colors.black, fontFamily: "Aveny")),
+          textTheme: TextTheme(bodyText1: TextStyle(color: Colors.black))),
+      home: index(),
     );
   }
 }
@@ -75,3 +89,5 @@ class _ladi extends State<LadiPage>{
     );
   }
 }
+
+
